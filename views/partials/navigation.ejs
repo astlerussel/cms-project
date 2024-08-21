@@ -1,0 +1,9 @@
+<nav>
+    <ul>
+        
+        <% pages.forEach(page => { %>
+            <li><a href="/<%= page._id %>"><%= page.title %></a></li>
+        <% }) %>
+        <li><a href="/login">Login</a></li>
+    </ul>
+</nav>

@@ -1,0 +1,246 @@
+body {
+    display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            
+            font-family: Arial, sans-serif;
+            max-width: 1200px; 
+    margin: 0 auto; 
+            
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #020e1c;
+    color: #FBEAEB;
+    position: relative;
+}
+
+
+header .logo img {
+    height: 50px;
+}
+
+
+header .logo {
+    position: absolute;
+    left: 10px;
+}
+
+header .tagline {
+    flex: 1;
+    text-align: left;
+    font-size: 1.2em;
+    font-family: cursive;
+    font-weight: bold;
+    margin-left: 100px;
+}
+header .admin {
+    flex: 1;
+    text-align: right;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin-left: 100px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #031934;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #03224d;
+}
+
+
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #020e1c;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+form {
+    
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+
+
+form input{
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+}
+
+form button {
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead {
+    background-color: #333;
+    color: #fff;
+}
+
+thead th {
+    padding: 10px;
+    text-align: center;
+}
+
+tbody td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.edit-link, .delete-link {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.edit-link:hover, .delete-link:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+.delete-link {
+    color: #dc3545;
+}
+
+.delete-link:hover {
+    color: #c82333;
+}
+
+#editor-container {
+    height: 400px; /* Adjust this value as needed */
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+}
+
+
+.login-form {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.form-group {
+    display: flex;
+    margin-bottom: 15px;
+    align-items: center;
+    
+}
+
+.form-group label {
+    width: 100px;
+    font-size: 16px;
+    margin-right: 5px;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+.form-group input {
+    
+    
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+.form-group-admin {
+    display: flex;
+    margin-bottom: 15px;
+    align-items: center;
+    
+}
+
+.form-group-admin label {
+    width: 100px;
+    font-size: 14px;
+    margin-right: 5px;
+    padding-bottom: 10px;
+    
+
+}
+
+.form-group-admin input {
+    
+    
+    border: 1px solid #ccc;
+    border-radius: 4px;
+   
+}

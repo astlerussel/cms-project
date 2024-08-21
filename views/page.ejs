@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demon Slayer</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <%- include('partials/navigation') %>
+    <main>
+        
+        <% if (page.image) { %>
+            <img src="<%= page.image %>" alt="<%= page.title %>" style="max-width: 100%;">
+        <% } %>
+        <h2><%= page.title %></h2>
+        <div><%- page.content %></div>
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>

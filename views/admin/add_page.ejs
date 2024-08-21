@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demon Slayer</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    
+</head>
+<body>
+    <%- include('../partials/admin_header') %>
+    <nav>
+        <ul>
+            <li><a href="/admin">Dashboard</a></li>
+            <li><a href="/admin/add-page">Add Page</a></li>
+            <li><a href="/admin/edit-pages">Edit Pages</a></li>
+            <li><a href="/admin/logout">Logout</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Add Page</h2>
+        <form action="/admin/add-page" method="POST" enctype="multipart/form-data">
+            <div class="form-group-admin">
+                <label for="title">Page Title:</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div class="form-group-admin">
+                <label for="image">Hero Image:</label>
+                <input type="file" id="image" name="image">
+            </div>
+            <div>
+                
+                <div id="editor-container"></div>
+    <input type="hidden" name="content" id="content">
+                
+            </div>
+            
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </main>
+    <%- include('../partials/footer') %>
+    <script>
+        var quill = new Quill('#editor-container', {
+            theme: 'snow'
+        });
+
+        var form = document.querySelector('form');
+        form.onsubmit = function() {
+            var content = document.querySelector('input[name=content]');
+            content.value = quill.root.innerHTML;
+        };
+    </script>
+</body>
+</html>

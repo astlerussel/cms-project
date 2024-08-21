@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demon Slayer</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+</head>
+<body>
+    <%- include('../partials/admin_header') %>
+    <nav>
+        <ul>
+            <li><a href="/admin">Dashboard</a></li>
+            <li><a href="/admin/add-page">Add Page</a></li>
+            <li><a href="/admin/edit-pages">Edit Pages</a></li>
+            <li><a href="/admin/logout">Logout</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Edit Page</h2>
+        <form action="/admin/edit-page/<%= page._id %>" method="POST" enctype="multipart/form-data">
+            <div class="form-group-admin">
+                <label for="title">Page Title:</label>
+                <input type="text" id="title" name="title" value="<%= page.title %>" required>
+            </div>
+            <div class="form-group-admin">
+                <label for="image">Hero Image:</label>
+                <% if (page.image) { %>
+                    <img src="<%= page.image %>" alt="<%= page.title %>" style="max-width: 100px;margin-right: 10px;">
+                <% } %>
+                <input type="file" id="image" name="image">
+            </div>
+            <div>
+                
+                <div id="editor-container"></div>
+                <input type="hidden" name="content" id="content">
+            </div>
+            
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+
+    </main>
+    <%- include('../partials/footer') %>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script>
+        var quill = new Quill('#editor-container', {
+            theme: 'snow'
+        });
+        
+        // Set the content from the database
+        quill.root.innerHTML = `<%- page.content %>`;
+
+        var form = document.querySelector('form');
+        form.onsubmit = function() {
+            var contentInput = document.querySelector('input[name=content]');
+            contentInput.value = quill.root.innerHTML;
+        };
+    </script>
+</body>
+</html>
